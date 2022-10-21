@@ -7,25 +7,28 @@
         <title>PDF Resume</title>
     </head>
     <body>
-        <h2>{{pdf.name}}</h2>
-        <h2>{{pdf.email}}</h2>
-        <h2>{{pdf.phone}}</h2>
+        <h2>{{ pdf.name }}</h2>
+        <h2>{{ pdf.email }}</h2>
+        <h2>{{ pdf.phone }}</h2>
         <hr>
         <br>
         <p>Summary</p>
-        <p>{{pdf.summary}}<</p>
+        <p>
+            {{ pdf.summary }}<
+        </p>
         <hr>
         <br>
         <p>Skills</p>
-        <p>{{pdf.skills}}</p>
+        <p>{{ pdf.skills }}</p>
         <hr>
         <br>
         <p>Education</p>
         <ul>
-            <li>{{pdf.school}}</li>
-            <li>{{pdf.university}}</li>
-            <li>{{pdf.degree}}</li>
-            <li>{{pdf.previous_work}}</li>
+            <li>Schooling : {{ pdf.school }}</li>
+            <li>{{ pdf.degree }} from {{ pdf.university }}</li>
         </ul>
+        <hr>
+        <p>Previous Work</p>
+        <p>{{ pdf.previous_work }}</p>
     </body>
 </html>
