@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from .models import Profile
+import pdfkit
+from django.http import HttpResponse
+from django.template import loader
+import io
 # Create your views here.
 def index(request):
     if request.method == "POST":
@@ -20,6 +24,14 @@ def index(request):
 
 def resume(request,id):
     pdf = Profile.objects.get(pk=id)
-    context = {'pdf':pdf}
-    
-    return render(request, 'pdf/resume.html', context)
+    template = loader.get_template('pdf/resume.html')
+    html = template.render({'pdf':pdf})
+    options = {
+        'page-size' : 'A4',
+        'encoding' : "UTF-8"
+    }
+    pdf2 = pdfkit.from_string(html,False,options)
+    response = HttpResponse(pdf2, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment'
+    filename = "resume.pdf"
+    return response
