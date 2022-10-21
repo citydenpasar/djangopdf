@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PDF Resume</title>
+    </head>
+    <body>
+        <h2>{{pdf.name}}</h2>
+        <h2>{{pdf.email}}</h2>
+        <h2>{{pdf.phone}}</h2>
+        <hr>
+        <br>
+        <p>Summary</p>
+        <p>{{pdf.summary}}<</p>
+        <hr>
+        <br>
+        <p>Skills</p>
+        <p>{{pdf.skills}}</p>
+        <hr>
+        <br>
+        <p>Education</p>
+        <ul>
+            <li>{{pdf.school}}</li>
+            <li>{{pdf.university}}</li>
+            <li>{{pdf.degree}}</li>
+            <li>{{pdf.previous_work}}</li>
+        </ul>
+    </body>
+</html>

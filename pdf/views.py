@@ -17,3 +17,9 @@ def index(request):
         profile.save()
     context = {}
     return render(request, 'pdf/accept.html', context)
+
+def resume(request,id):
+    pdf = Profile.objects.get(pk=id)
+    context = {'pdf':pdf}
+    
+    return render(request, 'pdf/resume.html', context)
